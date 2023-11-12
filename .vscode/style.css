@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--txt);
+  }
+  
+  :root{
+    --txt: green;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --stroke-color: rgba( 255, 255, 255, 0.5);
+    --surface-color: rgba( 255, 255, 255, 0.1);
+    --surface-color-hover: rgba( 255, 255, 255, 0.05);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(./assets/moon.svg);
+  }
+  .light{
+    --txt: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba( 0, 0, 0, 0.5);
+    --surface-color: rgba( 0, 0, 0, 0.05);
+     --surface-color-hover: rgba( 0, 0, 0, 0.02);
+     --highlight-color: rgba(0, 0, 0, 0.1);
+      --switch-bg-url: url(./assets/sun.svg);
+  }
+  
+  
+  body{ 
+    background-image: var(--bg-url);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    height: 100%;
+  }
+  body{
+    font-family: 'Inter', sans-serif;
+    color: var(--txt);
+  
+  }
+  #container{
+    width: 100%;
+    max-width: 588px;
+    margin: 56px auto 0px;
+    padding: 0 24px;
+  }
+  
+  #profile{
+    text-align: center;
+    padding: 24px;
+  }
+  
+  #profile img{
+    display: block;
+    width: 112px;
+    margin: auto;
+    
+  }
+  
+  #profile p{
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
+    color: purple;
+    padding: 10px;
+  }
+  
+  #switch {
+    
+    position: relative;
+    width: 64px;
+    margin: 8px auto;
+  
+  }
+  #switch button{
+    height: 32px;
+    width: 32px;
+    background: white;
+    border: 0;
+    border-radius: 50%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-image: var(--switch-bg-url);
+    background-size: cover;
+    position:absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  
+    animation: slide-back 0.4s;
+  
+  }
+  #switch button:hover {
+  
+  outline: 8px solid var(--highlight-color);
+  }
+  
+  .light #switch button{
+    animation: slide-in 0.4s forwards;
+    
+   
+  }
+  
+  #switch span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    border-radius: 9999px;
+  }
+  
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0px;
+  }
+  ul li a{
+    border: 1px solid black;
+    justify-content: center;
+    display: flex;
+    padding: 16px 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    text-decoration: none;
+    font-weight: 500;
+    transition:background 0.5s;
+    color: var(--txt);
+  }
+  
+  ul li a:hover{
+    
+    background:var(--surface-color-hover);
+    border: 1px solid var(--txt);
+  }
+  #social{
+    display: flex;
+    gap: 16px;
+    font-size: 24px;
+    padding: 24px 0px;
+    justify-content: center;
+  }
+  
+  #social a{
+    display: flex;
+     justify-content: center;
+     align-items: center;
+     transition: background 0.2;
+     padding: 16px;
+  }
+  #social a:hover{
+     background: var(--highlight-color);
+      border-radius: 50%;
+  }
+  footer{
+    text-align: center;
+    padding: 24px 0px;
+    font-size: 18px;
+  }
+  
+  @media ( min-width: 2000px) {
+         :root {
+           --bg-url: url(./assets/bg-desktop.jpg);
+          }
+         .ligth {
+         --bg-url: url(./assets/bg-desktop-light.jpg);
+        }
+  }
+  
+  @keyframes  slide-in{
+         from {
+             left: 0;
+            }  
+            to {
+            left: 50%;
+          }
+  }
+  
+  @keyframes slide-back {
+  
+    from {
+       left: 50%;
+  }
+     to {
+       left: 0;
+  }
+  
+  }
